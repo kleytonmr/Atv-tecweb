@@ -5,66 +5,66 @@ var vPacientes = document.querySelectorAll(".paciente");
 getValues();
 
 function getValues(){
-	
-	for (i = 0; i < vPacientes.length; i++) {
 
-		tdPeso = vPacientes[i].querySelector(".info-peso");
-		peso = tdPeso.textContent;
-    
- 		tdAltura = vPacientes[i].querySelector(".info-altura");
-		altura = tdAltura.textContent;
+		for (i = 0; i < vPacientes.length; i++) {
 
-		tdGordura = vPacientes[i].querySelector(".info-gordura");
-		gordura = tdGordura.textContent;
+			tdPeso = vPacientes[i].querySelector(".info-peso");
+			peso = tdPeso.textContent;
 
-		tdImc = vPacientes[i].querySelector(".info-imc");
-		imc = peso/(altura*altura)
-		imc = parseFloat(imc.toFixed(2));
+			tdAltura = vPacientes[i].querySelector(".info-altura");
+			altura = tdAltura.textContent;
 
-    		tdResult = vPacientes[i].querySelector(".info-result");
-    
+			tdGordura = vPacientes[i].querySelector(".info-gordura");
+			gordura = tdGordura.textContent;
+
+			tdImc = vPacientes[i].querySelector(".info-imc");
+			imc = peso/(altura*altura)
+			imc = parseFloat(imc.toFixed(2));
+
+			tdResult = vPacientes[i].querySelector(".info-result");
+
 		if (peso <= 1 || peso > 300) {
-      
-      		   tdImc.textContent = "Peso Inválido";
-      		   tdResult.style.backgroundColor = "red";
-    
-    		}else if (altura < 1 || altura > 3.00) {
+
+			tdImc.textContent = "Peso Inválido";
+			tdResult.style.backgroundColor = "red";
+
+		}else if (altura < 1 || altura > 3.00) {
 
 			tdImc.textContent = "Altura Inválida"
 			tdResult.style.backgroundColor = "red";
 
-    }else{
-    	tdImc.textContent = imc;
-    }
-
-   if(tdImc.textContent == "Peso Inválido"  || tdImc.textContent == "Altura Inválida" ){
-    
-      tdResult.style.backgroundColor = "blue"; 
-      tdResult.textContent = "Indefinido";
-		
 		}else{
-		 	
-		 	if (imc < 18.5) {
+			tdImc.textContent = imc;
+		}
 
-         tdResult.style.backgroundColor = "red";
-         tdResult.textContent = "Abaixo do peso";
-      }
+		if(tdImc.textContent == "Peso Inválido"  || tdImc.textContent == "Altura Inválida" ){
 
-      else if (imc >= 18.5 && imc < 25) {
-        tdResult.style.backgroundColor = "green";
-		  	tdResult.textContent = "Peso normal";
-		 	}
+			tdResult.style.backgroundColor = "blue"; 
+			tdResult.textContent = "Indefinido";
 
-		 	else if (imc >= 25 && imc < 30) {
-        tdResult.style.backgroundColor = "orange";
-		 		tdResult.textContent = "Acima do peso";
-		 	}
+		}else{
 
-		 	else{
-		 	  tdResult.style.backgroundColor = "red";
-		 	  tdResult.textContent = "Obeso";
-		 	}
-    }
+				if (imc < 18.5) {
+
+					tdResult.style.backgroundColor = "red";
+					tdResult.textContent = "Abaixo do peso";
+				}
+
+				else if (imc >= 18.5 && imc < 25) {
+					tdResult.style.backgroundColor = "green";
+					tdResult.textContent = "Peso normal";
+				}
+
+				else if (imc >= 25 && imc < 30) {
+					tdResult.style.backgroundColor = "orange";
+					tdResult.textContent = "Acima do peso";
+				}
+
+				else{
+					tdResult.style.backgroundColor = "red";
+					tdResult.textContent = "Obeso";
+			}
+		}
 	}
 }
 
