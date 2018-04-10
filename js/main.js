@@ -21,14 +21,14 @@ function getValues(){
 		imc = peso/(altura*altura)
 		imc = parseFloat(imc.toFixed(2));
 
-    tdResult = vPacientes[i].querySelector(".info-result");
+    		tdResult = vPacientes[i].querySelector(".info-result");
     
 		if (peso <= 1 || peso > 300) {
       
-      tdImc.textContent = "Peso Inválido";
-      tdResult.style.backgroundColor = "red";
+      		   tdImc.textContent = "Peso Inválido";
+      		   tdResult.style.backgroundColor = "red";
     
-    }else if (altura < 1 || altura > 3.00) {
+    		}else if (altura < 1 || altura > 3.00) {
 
 			tdImc.textContent = "Altura Inválida"
 			tdResult.style.backgroundColor = "red";
@@ -37,7 +37,7 @@ function getValues(){
     	tdImc.textContent = imc;
     }
 
-		if(tdImc.textContent == "Peso Inválido"  || tdImc.textContent == "Altura Inválida" ){
+   if(tdImc.textContent == "Peso Inválido"  || tdImc.textContent == "Altura Inválida" ){
     
       tdResult.style.backgroundColor = "blue"; 
       tdResult.textContent = "Indefinido";
