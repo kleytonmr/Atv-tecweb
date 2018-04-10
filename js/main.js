@@ -99,6 +99,6 @@ function getRowAltura(element) {
 		 value = vPacientes[p].querySelector(".info-altura").textContent;
 	}
 	vPacientes[p].querySelector(".info-altura").innerHTML = value;
-	getValues(); 
+	getValues();
 }
 
