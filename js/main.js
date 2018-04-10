@@ -11,7 +11,7 @@ function getValues(){
 		tdPeso = vPacientes[i].querySelector(".info-peso");
 		peso = tdPeso.textContent;
     
-    tdAltura = vPacientes[i].querySelector(".info-altura");
+ 		tdAltura = vPacientes[i].querySelector(".info-altura");
 		altura = tdAltura.textContent;
 
 		tdGordura = vPacientes[i].querySelector(".info-gordura");
